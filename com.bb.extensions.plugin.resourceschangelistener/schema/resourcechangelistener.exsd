@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="com.bb.extensions.plugin.resourceschangelistener" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="com.bb.extensions.plugin.resourceschangelistener" id="resourcechangelistener" name="Resource Change Listener"/>
+      </appinfo>
+      <documentation>
+         [Enter description of this extension point.]
+      </documentation>
+   </annotation>
+
+   <include schemaLocation="schema://org.eclipse.core.expressions/schema/expressionLanguage.exsd"/>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+         <documentation>
+            This extension point can be used to listen to resource changes in the workspace. It is part of an early startup plugin and thus will be always listening to resource changes. The plugins connected to this extension point will only be loaded when the resource change they are interested in occurs.
+
+The ResourceChangeListener is called when a resource change of the kind specified in the &quot;Kind&quot; attribute occurs. 
+
+For some &quot;Kind&quot; of resource changes, the listener is called twice, once before the resource change is performed and once after (for instance &quot;Project Delete&quot;). See the description of the &quot;Kind&quot; attribute for more details.
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="ResourceChangeListener" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="ResourceChangeListener">
+      <complexType>
+         <sequence minOccurs="0" maxOccurs="1">
+            <element ref="enablement"/>
+         </sequence>
+         <attribute name="Class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.eclipse.core.resources.IResourceChangeListener"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="Kind" use="required">
+            <annotation>
+               <documentation>
+                  The resource change listener is called when a resource change of the kind specified in the &quot;Kind&quot; attribute occurs. The available kinds are:
+
+Project Close: Called before the project is closed.
+
+Project Delete: Called before the project is deleted.
+               </documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <enumeration value="Project Close">
+                  </enumeration>
+                  <enumeration value="Project Delete">
+                  </enumeration>
+               </restriction>
+            </simpleType>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Unit Testing Dependencies
+Bundle-SymbolicName: com.bb.extensions.plugin.unittests.dependencies
+Bundle-Version: 1.0.1
+Bundle-Vendor: Application Patterns Extensions Waterloo

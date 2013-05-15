@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="Application Patterns and Extensions Waterloo Momentics RIM-Internal Update Site" url="http://ci0000001090162/momentics_internal">
+      The Application Patterns and Extensions Waterloo Momentics Update Site which contains our Momentics plugins.
+   </description>
+   <category-def name="Unit Testing Plugins" label="Unit Testing Plugins"/>
+</site>
